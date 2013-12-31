@@ -1,0 +1,20 @@
+﻿.hero-section{
+  display: grid;
+  height: 50vh;
+  place-items: center;
+  text-align: center;
+
+  &__h1 {
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 3vw + 1rem, 4rem);
+  }
+
+  &__under-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+}

@@ -432,6 +432,7 @@
 
     <ItemGroup>
       <Folder Include="Shared\" />
+      <Folder Include="wwwroot\fonts\" />
     </ItemGroup>
 
 </Project>
