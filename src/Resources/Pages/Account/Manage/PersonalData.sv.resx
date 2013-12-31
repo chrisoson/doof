@@ -23,4 +23,13 @@
     <data name="delete-btn" xml:space="preserve">
         <value>Ta bort</value>
     </data>
+    <data name="meta-desc" xml:space="preserve">
+        <value>Sida där du kan ladda ner och ta bort data för ditt konto.</value>
+    </data>
+    <data name="meta-keywords" xml:space="preserve">
+        <value>personlig, data, information, doof, recept</value>
+    </data>
+    <data name="title" xml:space="preserve">
+        <value>Personlig Data</value>
+    </data>
 </root>

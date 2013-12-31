@@ -30,4 +30,13 @@
     <data name="delete-btn" xml:space="preserve">
         <value>Delete</value>
     </data>
+    <data name="title" xml:space="preserve">
+        <value>Personal Data</value>
+    </data>
+    <data name="meta-desc" xml:space="preserve">
+        <value>Page where you can download and delete personal data.</value>
+    </data>
+    <data name="meta-keywords" xml:space="preserve">
+        <value>personal, data, doof, recipes</value>
+    </data>
 </root>

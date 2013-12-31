@@ -173,6 +173,12 @@ li::marker {
 .btn.btn-secondary:hover {
   background-color: hsl(40, 100%, 88%);
 }
+.btn.btn-danger {
+  background-color: red;
+}
+.btn.btn-danger:hover {
+  background-color: crimson;
+}
 .btn.btn-light {
   background-color: hsl(39, 100%, 96%);
 }

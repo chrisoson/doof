@@ -78,6 +78,24 @@ namespace doof.Resources.Pages.Account.Manage {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Page where you can download and delete personal data..
+        /// </summary>
+        internal static string meta_desc {
+            get {
+                return ResourceManager.GetString("meta-desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to personal, data, doof, recipes.
+        /// </summary>
+        internal static string meta_keywords {
+            get {
+                return ResourceManager.GetString("meta-keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account contains personal data that you have given us. This page allows you to download or delete that data..
         /// </summary>
         internal static string p1 {
@@ -92,6 +110,15 @@ namespace doof.Resources.Pages.Account.Manage {
         internal static string p2 {
             get {
                 return ResourceManager.GetString("p2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Data.
+        /// </summary>
+        internal static string title {
+            get {
+                return ResourceManager.GetString("title", resourceCulture);
             }
         }
     }
