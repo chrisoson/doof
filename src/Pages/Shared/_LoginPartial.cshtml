@@ -6,10 +6,10 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li>
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@Localizer["hello"] @User.Identity?.Name!</a>
+            <a  asp-page="/Account/Manage/Index" title="Manage">@Localizer["hello"] @User.Identity?.Name!</a>
         </li>
         <li>
-            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+            <form  asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
                 <button type="submit" class="nav-link btn btn-link text-dark">@Localizer["logout"]</button>
             </form>
         </li>
@@ -17,9 +17,9 @@
     else
     {
         <li>
-            <a asp-area="Identity" asp-page="/Account/Register">@Localizer["register"]</a>
+            <a asp-page="/Account/Register">@Localizer["register"]</a>
         </li>
         <li>
-            <a asp-area="Identity" asp-page="/Account/Login">@Localizer["login"]</a>
+            <a  asp-page="/Account/Login">@Localizer["login"]</a>
         </li>
     }
