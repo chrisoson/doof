@@ -12,8 +12,18 @@
 }
 
 .render-body{
+  margin-top: 1rem;
+
   @include a.tablet {
     width: 75%;
     margin: 0 auto;
+  }
+}
+
+.section-header{
+  display: none;
+
+  @include a.tablet{
+    display: block;
   }
 }

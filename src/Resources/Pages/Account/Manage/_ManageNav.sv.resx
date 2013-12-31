@@ -26,4 +26,7 @@
     <data name="two-factor" xml:space="preserve">
         <value>Två Faktor Autentisering</value>
     </data>
+    <data name="h2" xml:space="preserve">
+        <value>Kontoinställningar</value>
+    </data>
 </root>

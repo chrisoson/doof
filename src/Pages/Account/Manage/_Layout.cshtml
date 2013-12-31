@@ -14,8 +14,10 @@
 }
 
 <section>
-  <h1>@Localizer["h1"]</h1>
-  <hr/>
+  <div class="section-header">
+    <h1>@Localizer["h1"]</h1>
+    <hr/>
+  </div>
   <div class="manage-container">
     <div>
       <partial name="_ManageNav"/>
@@ -28,4 +30,22 @@
 
 @section Scripts {
     @RenderSection("Scripts", required: false)
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('button[data-toggle-expanded]');
+        const navItems = document.querySelectorAll('.manage-nav li');
+        const headerHr = document.querySelector('.manage-nav hr');
+
+        toggleButton.addEventListener('click', function() {
+        const isExpanded = toggleButton.getAttribute('data-toggle-expanded') === 'true';
+        navItems.forEach(item => {
+        item.style.display = isExpanded ? 'none' : 'block';
+        headerHr.style.display = isExpanded ? 'none' : 'block';
+        toggleButton.innerHTML = isExpanded ? '&#8659;' : '&#8657;'
+      });
+        toggleButton.setAttribute('data-toggle-expanded', !isExpanded);
+      });
+      });
+    </script>
 }

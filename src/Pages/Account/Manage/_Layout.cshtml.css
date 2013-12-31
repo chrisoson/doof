@@ -11,10 +11,22 @@
   }
 }
 
+.render-body {
+  margin-top: 1rem;
+}
 @media (min-width: 768px) {
   .render-body {
     width: 75%;
     margin: 0 auto;
+  }
+}
+
+.section-header {
+  display: none;
+}
+@media (min-width: 768px) {
+  .section-header {
+    display: block;
   }
 }
 

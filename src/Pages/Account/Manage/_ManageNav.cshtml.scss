@@ -1,1 +1,43 @@
-﻿
+﻿@use "../../../wwwroot/sass/abstracts" as a;
+
+.manage-nav{
+  background-color: hsl(a.$clr-link-grey);
+  text-align: left;
+  padding:1rem;
+  border-radius: 1vw;
+
+  hr{
+    margin: 0.5rem 0;
+    display: none;
+  }
+
+  li{
+    display: none;
+    @include a.tablet{
+      display: block;
+    }
+  }
+
+  &__header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include a.tablet{
+      display: none;
+    }
+
+    h2{
+      font-weight: 700;
+    }
+
+    button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      aspect-ratio: 1/1;
+      padding-top: 1rem;
+    }
+  }
+}

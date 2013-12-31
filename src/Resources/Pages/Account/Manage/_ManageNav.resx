@@ -33,4 +33,7 @@
     <data name="personal-data" xml:space="preserve">
         <value>Personal Data</value>
     </data>
+    <data name="h2" xml:space="preserve">
+        <value>Account Settings</value>
+    </data>
 </root>

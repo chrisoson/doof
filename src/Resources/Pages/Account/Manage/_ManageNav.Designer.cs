@@ -69,6 +69,15 @@ namespace doof.Resources.Pages.Account.Manage {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Settings.
+        /// </summary>
+        internal static string h2 {
+            get {
+                return ResourceManager.GetString("h2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
         internal static string password {
