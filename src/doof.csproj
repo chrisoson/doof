@@ -246,6 +246,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Shared\" />
       <Folder Include="wwwroot\css\" />
     </ItemGroup>
 
