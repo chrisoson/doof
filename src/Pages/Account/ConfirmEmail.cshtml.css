@@ -1,0 +1,9 @@
+section {
+  display: grid;
+  place-items: center;
+  padding-top: 10rem;
+  list-style: none;
+  text-align: center;
+}
+
+/*# sourceMappingURL=ConfirmEmail.cshtml.css.map */

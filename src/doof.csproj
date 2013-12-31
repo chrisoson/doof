@@ -92,6 +92,18 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>RegisterModel.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\ConfirmEmailModel.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ConfirmEmail.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\_StatusMessage.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_StatusMessage.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\ConfirmEmail.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ConfirmEmail.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -179,6 +191,21 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>RegisterModel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\ConfirmEmailModel.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ConfirmEmailModel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\_StatusMessage.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_StatusMessage.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\ConfirmEmail.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ConfirmEmail.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

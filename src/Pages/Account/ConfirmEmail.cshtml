@@ -2,11 +2,12 @@
 @model ConfirmEmailModel
 @section metatags
 {
-    <title>Confirm email</title>
-    <meta name="description" content="Confirm email page"/>
-    <meta name="keywords" content="Confirm email"/>
+    <title>@Localizer["title"]</title>
+    <meta name="description" content="@Localizer["meta-desc"]"/>
+    <meta name="keywords" content="@Localizer["meta-keywords"]"/>
     <meta name="author" content="doof"/>
 }
 
-<h1>@ViewData["Title"]</h1>
-<partial name="_StatusMessage" model="Model.StatusMessage" />
+<section>
+  <partial name="_StatusMessage" model="Model.StatusMessage" />
+</section>
