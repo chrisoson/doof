@@ -140,6 +140,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>PersonalData.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\ChangePassword.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\ChangePasswordModel.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ChangePasswordModel.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -287,6 +295,16 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>PersonalData.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\ChangePassword.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ChangePassword.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\ChangePasswordModel.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ChangePasswordModel.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

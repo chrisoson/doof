@@ -5,7 +5,7 @@ namespace doof.Middlewares;
 public class RequestCultureMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly List<string> _supportedCultures;
+    private readonly List<string>? _supportedCultures;
 
     public RequestCultureMiddleware(RequestDelegate next, IConfiguration configuration)
     {
@@ -20,8 +20,8 @@ public class RequestCultureMiddleware
         if (context.Request.Method == HttpMethod.Post.Method)
         {
             // If it's a POST request, remove the culture prefix and continue
-            var pathSegments = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
-            if (pathSegments.Length > 1 && _supportedCultures.Contains(pathSegments[0]))
+            var pathSegments = path?.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            if (pathSegments is { Length: > 1 } && _supportedCultures != null && _supportedCultures.Contains(pathSegments[0]))
             {
                 // Remove the culture prefix
                 context.Request.Path = new PathString("/" + string.Join('/', pathSegments.Skip(1)));
@@ -32,9 +32,9 @@ public class RequestCultureMiddleware
         }
 
         // Handle GET requests as usual
-        var culturePrefix = path.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+        var culturePrefix = path?.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
 
-        if (string.IsNullOrEmpty(culturePrefix) || !_supportedCultures.Contains(culturePrefix))
+        if (_supportedCultures != null && (string.IsNullOrEmpty(culturePrefix) || !_supportedCultures.Contains(culturePrefix)))
         {
             var acceptLanguageHeader = context.Request.Headers["Accept-Language"].ToString();
             var preferredCultures = acceptLanguageHeader.Split(',')
@@ -45,7 +45,7 @@ public class RequestCultureMiddleware
 
             var userCulture = preferredCultures.FirstOrDefault(c => _supportedCultures.Contains(c)) ?? "en-US";
 
-            if (!context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
+            if (context.Request.Path.Value != null && !context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
             {
                 var redirectPath = $"/{userCulture}{context.Request.Path.Value}";
                 var queryString = context.Request.QueryString.Value;

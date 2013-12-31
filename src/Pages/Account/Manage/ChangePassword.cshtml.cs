@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Localization;
 
 namespace doof.Pages.Account.Manage
 {
@@ -14,15 +15,18 @@ namespace doof.Pages.Account.Manage
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<ChangePasswordModel> _logger;
+        private readonly IStringLocalizer<ChangePasswordModel> _localizer;
 
         public ChangePasswordModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            ILogger<ChangePasswordModel> logger)
+            ILogger<ChangePasswordModel> logger,
+            IStringLocalizer<ChangePasswordModel> localizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _localizer = localizer;
         }
 
         /// <summary>
@@ -49,28 +53,39 @@ namespace doof.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [DataType(DataType.Password)]
-            [Display(Name = "Current password")]
+            [Required(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.old_password_required),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
             public string OldPassword { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            [DataType(DataType.Password)]
-            [Display(Name = "New password")]
+            [Required(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.new_password_required),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
+            [StringLength(100,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.new_password_length),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
             public string NewPassword { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [DataType(DataType.Password)]
-            [Display(Name = "Confirm new password")]
-            [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
+            [Compare("NewPassword",
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.ChangePasswordModel.password_compare),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.ChangePasswordModel))]
             public string ConfirmPassword { get; set; }
         }
 
@@ -107,6 +122,7 @@ namespace doof.Pages.Account.Manage
             var changePasswordResult = await _userManager.ChangePasswordAsync(user, Input.OldPassword, Input.NewPassword);
             if (!changePasswordResult.Succeeded)
             {
+                //todo There is a problem here to localize.
                 foreach (var error in changePasswordResult.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
@@ -116,7 +132,7 @@ namespace doof.Pages.Account.Manage
 
             await _signInManager.RefreshSignInAsync(user);
             _logger.LogInformation("User changed their password successfully.");
-            StatusMessage = "Your password has been changed.";
+            StatusMessage = _localizer["password-change-success"];
 
             return RedirectToPage();
         }
