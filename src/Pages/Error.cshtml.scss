@@ -1,6 +1,11 @@
-﻿@use "../wwwroot/sass/variables" as v;
+﻿@use "../wwwroot/sass/abstracts" as a;
 
 h1{
-  color: v.$background;
-  background: aqua;
+  font-size: clamp(2rem,3vw + 1rem, 3rem);
+}
+
+section{
+  margin-top:7rem;
+  display: grid;
+  place-items: center;
 }

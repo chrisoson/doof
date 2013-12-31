@@ -27,7 +27,6 @@ body {
 
   //todo change this
   font-family: "Roboto", sans-serif;
-  font-size: medium;
 
   @media(prefers-color-scheme: dark){
     color: hsl(a.$clr-white);
@@ -41,6 +40,11 @@ body {
 
   line-height: 1.5;
   min-height: 100svh;
+  width: clamp(16rem, 90vw, 80rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* responsive images/videos */
@@ -68,4 +72,8 @@ p,
 li {
   max-width: var(65ch);
   text-wrap: pretty;
+}
+
+main{
+  min-height: 100svh;
 }

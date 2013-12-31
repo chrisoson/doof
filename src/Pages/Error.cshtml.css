@@ -1,6 +1,13 @@
+/* colors */
+/* font-sizes */
 h1 {
-  color: blue;
-  background: aqua;
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+}
+
+section {
+  margin-top: 7rem;
+  display: grid;
+  place-items: center;
 }
 
 /*# sourceMappingURL=Error.cshtml.css.map */

@@ -120,6 +120,26 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>_LoginPartial.sv.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Error.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Error.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Error.es.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Error.es.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Error.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Erorr.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Error.ja.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Erorr.ja.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Error.sv.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Erorr.sv.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -243,10 +263,31 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>_LoginPartial.sv.resx</DependentUpon>
       </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Shared\" />
+      <Compile Update="Resources\Pages\Error.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Error.es.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.es.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Error.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.fr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Error.ja.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.ja.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Error.sv.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.sv.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -387,6 +428,10 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\scss\_variables-dark.scss" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\scss\_variables.scss" />
       <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Shared\" />
     </ItemGroup>
 
 </Project>

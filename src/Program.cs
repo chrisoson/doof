@@ -142,8 +142,7 @@ app.UseRequestLocalization();
 
 app.UseAuthorization();
 
-app.UseStatusCodePagesWithRedirects("/error/{0}");
-
+app.UseStatusCodePagesWithRedirects("/not-found");
 
 app.MapRazorPages();
 
