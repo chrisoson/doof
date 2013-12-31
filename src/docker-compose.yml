@@ -1,0 +1,6 @@
+﻿services:
+  doof:
+    image: doof
+    build:
+      context: .
+      dockerfile: Dockerfile
