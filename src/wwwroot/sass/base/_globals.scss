@@ -97,3 +97,14 @@ ol,ul{
 li::marker{
   font-weight: 700;
 }
+
+.field-validation-error{
+  color:red;
+}
+
+.validation-summary-errors{
+  color: red;
+  ul {
+    list-style: none;
+  }
+}

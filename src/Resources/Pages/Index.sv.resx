@@ -1,11 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
-<root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true">
-            
-        </xsd:element>
-    </xsd:schema>
+﻿<root>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>
@@ -18,11 +11,43 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="hero-button" xml:space="preserve">
+        <value>Här</value>
+    </data>
+    <data name="hero" xml:space="preserve">
+        <value>Ingen Reklam &lt;/br&gt;Inga Jobbiga Popups &lt;/br&gt;Bara &lt;span class="text-decoration-underline"&gt;Recept&lt;/span&gt;</value>
+    </data>
+    <data name="hero-text" xml:space="preserve">
+        <value>Alla recept</value>
+    </data>
+    <data name="terry-1" xml:space="preserve">
+        <value>Fråga Terry om mått medans du lagar mat, lämna din telefon på bordet.</value>
+    </data>
+    <data name="terry-2" xml:space="preserve">
+        <value>Behöver du hjälp med något annat som inte finns med i receptet, det kan Terry hjälpa till med.</value>
+    </data>
+    <data name="terry-3" xml:space="preserve">
+        <value>Låt Terry leda dig genom varje steg av matlagningen.</value>
+    </data>
+    <data name="terry-subtitle" xml:space="preserve">
+        <value>Vad kan Terry göra för dig?</value>
+    </data>
+    <data name="terry-title" xml:space="preserve">
+        <value>Terry, din egna partner när du lagar mat</value>
+    </data>
     <data name="Title" xml:space="preserve">
         <value>Hem</value>
     </data>
+    <data name="why-1" xml:space="preserve">
+        <value>Snabb sida med bara informationen du är intresserad av.</value>
+    </data>
+    <data name="why-2" xml:space="preserve">
+        <value>Finns tillgänglig i många olika språk.</value>
+    </data>
+    <data name="why-3" xml:space="preserve">
+        <value>Inbyggd assistent som gör matlagningen lättare. </value>
+    </data>
     <data name="why-title" xml:space="preserve">
-        <value>Varför använda doof?</value>
-        <comment>why-title</comment>
+        <value>Varför användar doof?</value>
     </data>
 </root>

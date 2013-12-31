@@ -28,22 +28,6 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Index.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Index.fr.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Index.fr.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Index.es.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Index.sv.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Index.sv.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Index.ja.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Index.ja.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
       <EmbeddedResource Update="Resources\Pages\Recipes\Index.es.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
@@ -63,22 +47,6 @@
       <EmbeddedResource Update="Resources\Pages\Recipes.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Recipes.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Recipes.es.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Recipes.es.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Recipes.fr.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Recipes.fr.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Recipes.ja.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Recipes.ja.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Recipes.sv.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Recipes.sv.Designer.cs</LastGenOutput>
       </EmbeddedResource>
       <EmbeddedResource Update="Resources\Shared\_Layout.resx">
         <Generator>ResXFileCodeGenerator</Generator>
@@ -104,41 +72,17 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>_LoginPartial.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.es.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>_LoginPartial.es.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.fr.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>_LoginPartial.fr.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.ja.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>_LoginPartial.ja.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.sv.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>_LoginPartial.sv.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
       <EmbeddedResource Update="Resources\Pages\Error.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Error.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Error.es.resx">
+      <EmbeddedResource Update="Resources\Pages\Account\Login.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Error.es.Designer.cs</LastGenOutput>
+        <LastGenOutput>Login.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Error.fr.resx">
+      <EmbeddedResource Update="Resources\Pages\Account\LoginModel.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Erorr.fr.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Error.ja.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Erorr.ja.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Pages\Error.sv.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Erorr.sv.Designer.cs</LastGenOutput>
+        <LastGenOutput>LoginModel.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
@@ -147,26 +91,6 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Index.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Index.fr.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Index.fr.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Index.es.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Index.es.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Index.sv.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Index.sv.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Index.ja.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Index.ja.resx</DependentUpon>
       </Compile>
       <Compile Update="Resources\Pages\Recipes\Index.es.Designer.cs">
         <DesignTime>True</DesignTime>
@@ -192,26 +116,6 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Recipes.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Recipes.es.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Recipes.es.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Recipes.fr.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Recipes.fr.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Recipes.ja.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Recipes.ja.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Recipes.sv.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Recipes.sv.resx</DependentUpon>
       </Compile>
       <Compile Update="Resources\Shared\_Layout.Designer.cs">
         <DesignTime>True</DesignTime>
@@ -243,50 +147,20 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>_LoginPartial.resx</DependentUpon>
       </Compile>
-      <Compile Update="Resources\Pages\Shared\_LoginPartial.es.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>_LoginPartial.es.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Shared\_LoginPartial.fr.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>_LoginPartial.fr.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Shared\_LoginPartial.ja.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>_LoginPartial.ja.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Shared\_LoginPartial.sv.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>_LoginPartial.sv.resx</DependentUpon>
-      </Compile>
       <Compile Update="Resources\Pages\Error.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Error.resx</DependentUpon>
       </Compile>
-      <Compile Update="Resources\Pages\Error.es.Designer.cs">
+      <Compile Update="Resources\Pages\Account\Login.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>Error.es.resx</DependentUpon>
+        <DependentUpon>Login.resx</DependentUpon>
       </Compile>
-      <Compile Update="Resources\Pages\Error.fr.Designer.cs">
+      <Compile Update="Resources\Pages\Account\LoginModel.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>Error.fr.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Error.ja.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Error.ja.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Pages\Error.sv.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Error.sv.resx</DependentUpon>
+        <DependentUpon>LoginModel.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 
@@ -431,7 +305,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Shared\" />
       <Folder Include="wwwroot\fonts\" />
     </ItemGroup>
 

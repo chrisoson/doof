@@ -127,8 +127,19 @@ li::marker {
   font-weight: 700;
 }
 
+.field-validation-error {
+  color: red;
+}
+
+.validation-summary-errors {
+  color: red;
+}
+.validation-summary-errors ul {
+  list-style: none;
+}
+
 .btn {
-  padding: 0.625rem 0.5rem;
+  padding: 0.5rem 0.625rem;
   border-radius: 0.25rem;
   border: 0;
   font-weight: 700;
