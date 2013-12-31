@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using doof.Data;
 using doof.Helpers;
+using doof.Middlewares;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Localization.Routing;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
-var supportedAppLanguages = builder.Configuration.GetSection("SupportedAppLanguages").Get<SupportedAppLanguages>();
-var supportedCultures = supportedAppLanguages.Dict.Values.Select(langInApp => langInApp.Culture).ToArray();
 
 //If it is in production, i will read env variables in the docker container
 //provided by a .env file and passed in the docker-compose.yml file.
@@ -36,15 +35,17 @@ builder.Services
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
+var supportedCultures = builder.Configuration.GetSection("Localization:SupportedCultures").Get<string[]>();
+var defaultCulture = builder.Configuration.GetValue<string>("Localization:DefaultCulture");
+
+
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
-    options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+    options.DefaultRequestCulture = new RequestCulture(defaultCulture!);
     options.AddSupportedCultures(supportedCultures);
     options.AddSupportedUICultures(supportedCultures);
     options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider { Options = options});
 });
-
-builder.Services.Configure<SupportedAppLanguages>(builder.Configuration.GetSection("AppLanguages"));
 
 var configuration = builder.Configuration;
 
@@ -107,34 +108,8 @@ else
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
-
-app.Use(async (context, next) =>
-{
-    var culturePrefix = context.Request.Path.Value.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
-
-    if (string.IsNullOrEmpty(culturePrefix) || !supportedCultures.Contains(culturePrefix))
-    {
-        var acceptLanguageHeader = context.Request.Headers["Accept-Language"].ToString();
-        var preferredCultures = acceptLanguageHeader.Split(',')
-            .Select(StringWithQualityHeaderValue.Parse)
-            .OrderByDescending(s => s.Quality.GetValueOrDefault(1))
-            .Select(s => s.Value)
-            .ToList();
-
-        var userCulture = preferredCultures.FirstOrDefault(c => supportedCultures.Contains(c)) ?? "en-US";
-
-        if (!context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
-        {
-            var redirectPath = $"/{userCulture}{context.Request.Path.Value}";
-            var queryString = context.Request.QueryString.Value;
-            context.Response.Redirect(redirectPath + queryString);
-            return;
-        }
-    }
-
-    await next();
-});
 
 app.UseRouting();
 
@@ -143,6 +118,8 @@ app.UseRequestLocalization();
 app.UseAuthorization();
 
 app.UseStatusCodePagesWithRedirects("/not-found");
+
+app.UseRequestCulture(app.Configuration);
 
 app.MapRazorPages();
 
