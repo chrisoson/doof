@@ -64,6 +64,12 @@ body {
     color: hsl(39, 100%, 96%);
     background-color: hsl(330, 2%, 33%);
   }
+  body a {
+    color: hsl(60, 100%, 90%);
+  }
+  body a:visited {
+    color: hsl(60, 100%, 40%);
+  }
 }
 @media (prefers-color-scheme: light) {
   body {

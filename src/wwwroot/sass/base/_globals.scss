@@ -27,6 +27,14 @@ body {
   @media(prefers-color-scheme: dark){
     color: hsl(a.$clr-white);
     background-color: hsl(a.$clr-black);
+
+    a {
+      color: hsl(a.$clr-link-yellow);
+      &:visited{
+        color: hsl(a.$clr-link-yellow-visited);
+      }
+
+    }
   }
 
   @media(prefers-color-scheme: light){
