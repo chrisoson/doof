@@ -1,7 +1,12 @@
 ﻿@use "../../../wwwroot/sass/abstracts" as a;
 
 .manage-nav{
-  background-color: hsl(a.$clr-link-grey);
+  background-color: hsl(a.$clr-light-orange);
+
+  @include a.dark-mode{
+    background-color: hsl(a.$clr-link-grey);
+  }
+
   text-align: left;
   padding:1rem;
   border-radius: 1vw;

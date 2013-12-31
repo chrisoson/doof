@@ -132,6 +132,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>SetPasswordModel.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\ExternalLogins.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ExternalLogins.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\PersonalData.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>PersonalData.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -269,6 +277,16 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>SetPasswordModel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\ExternalLogins.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ExternalLogins.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\PersonalData.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>PersonalData.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

@@ -56,7 +56,15 @@
           <div class="external-button-group">
             @foreach (var provider in Model.ExternalLogins!)
             {
-              <button type="submit" class="btn btn-secondary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+            <button
+              type="submit"
+              class="external-button btn btn-secondary"
+              name="provider"
+              value="@provider.Name"
+              title="Log in using your @provider.DisplayName account">
+              @(provider.DisplayName)
+              <img src="~/svg/@(provider.DisplayName).svg" width="30px" height="30px" alt="Image of the @(provider.DisplayName) icon"/>
+            </button>
             }
           </div>
         </form>

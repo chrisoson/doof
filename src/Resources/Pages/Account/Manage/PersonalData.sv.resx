@@ -1,0 +1,26 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="p1" xml:space="preserve">
+        <value>Ditt konto innehåller personlig information. Detta sidan gör det möjligt att ladda ner och ta bort datan.</value>
+    </data>
+    <data name="p2" xml:space="preserve">
+        <value>Tar du bord denna datan kommer ditt konto tas bort för alltid, och det går ej att ta tillbaka.</value>
+    </data>
+    <data name="download-btn" xml:space="preserve">
+        <value>Ladda ner</value>
+    </data>
+    <data name="delete-btn" xml:space="preserve">
+        <value>Ta bort</value>
+    </data>
+</root>

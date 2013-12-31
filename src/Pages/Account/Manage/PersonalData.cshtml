@@ -1,33 +1,32 @@
 ﻿@page
 @model PersonalDataModel
 @{
-    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+  ViewData["ActivePage"] = ManageNavPages.PersonalData;
 }
+
 @section metatags
 {
-    <title>Personal data</title>
-    <meta name="description" content="Personal data page"/>
-    <meta name="keywords" content="Personal data"/>
-    <meta name="author" content="doof"/>
+  <title>Personal data</title>
+  <meta name="description" content="Personal data page"/>
+  <meta name="keywords" content="Personal data"/>
+  <meta name="author" content="doof"/>
 }
 
 <h3>@ViewData["Title"]</h3>
 
-<div class="row">
-    <div class="col-md-6">
-        <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
-        <p>
-            <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
-        </p>
-        <form id="download-data" asp-page="DownloadPersonalData" method="post">
-            <button class="btn btn-primary" type="submit">Download</button>
-        </form>
-        <p>
-            <a id="delete" asp-page="DeletePersonalData" class="btn btn-danger">Delete</a>
-        </p>
-    </div>
-</div>
+<section>
+  <p>@Localizer["p1"]</p>
+  <p>
+    <strong>@Localizer["p2"]</strong>
+  </p>
+  <form id="download-data" asp-page="DownloadPersonalData" method="post">
+    <button class="btn btn-primary" type="submit">@Localizer["download-btn"]</button>
+  </form>
+  <p>
+    <a id="delete" asp-page="DeletePersonalData" class="btn btn-danger">@Localizer["delete-btn"]</a>
+  </p>
 
+</section>
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+  <partial name="_ValidationScriptsPartial"/>
 }

@@ -1,10 +1,15 @@
 /* colors */
 /* font-sizes */
 .manage-nav {
-  background-color: hsl(0, 0%, 20%);
+  background-color: hsl(40, 100%, 76%);
   text-align: left;
   padding: 1rem;
   border-radius: 1vw;
+}
+@media (prefers-color-scheme: dark) {
+  .manage-nav {
+    background-color: hsl(0, 0%, 20%);
+  }
 }
 .manage-nav hr {
   margin: 0.5rem 0;

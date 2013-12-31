@@ -21,7 +21,18 @@
     @foreach (var login in Model.CurrentLogins)
     {
       <tr>
-        <td id="@($"login-provider-{login.LoginProvider}")"><button class="btn btn-light">@login.ProviderDisplayName</button></td>
+        <td id="@($"login-provider-{login.LoginProvider}")">
+          <button
+            id="@($"link-login-button-{login.ProviderDisplayName}")"
+            type="submit"
+            class="external-button btn btn-secondary"
+            name="provider"
+            value="@login.ProviderDisplayName"
+            title="Log in using your @login.ProviderDisplayName account">
+            @(login.ProviderDisplayName)
+            <img src="~/svg/@(login.ProviderDisplayName).svg" width="30px" height="30px" alt="Image of the @(login.ProviderDisplayName) icon"/>
+          </button>
+        </td>
         <td>
           @if (Model.ShowRemoveButton)
           {

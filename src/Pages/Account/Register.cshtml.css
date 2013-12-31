@@ -12,6 +12,8 @@
 
 .external-button-group {
   margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 h1, h3 {
@@ -25,6 +27,12 @@ h1, h3 {
 
 .register-section {
   margin-top: 5rem;
+}
+
+.external-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /*# sourceMappingURL=Register.cshtml.css.map */
