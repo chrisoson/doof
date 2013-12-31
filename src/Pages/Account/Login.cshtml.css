@@ -24,15 +24,13 @@ h1, h3 {
   font-weight: 700;
 }
 
-@media (min-width: 768px) {
-  .login-section, .external-section {
-    display: flex;
-    justify-content: center;
-  }
+.login-section, .external-section {
+  width: clamp(5rem, 100%, 40rem);
+  margin: 0 auto;
 }
 
 .login-section {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 /*# sourceMappingURL=Login.cshtml.css.map */

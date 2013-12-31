@@ -84,6 +84,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>LoginModel.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Register.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Register.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\RegisterModel.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>RegisterModel.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -161,6 +169,16 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>LoginModel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Register.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Register.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\RegisterModel.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>RegisterModel.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 
 namespace doof.Pages.Account
 {
@@ -22,13 +23,15 @@ namespace doof.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly IStringLocalizer<RegisterModel> _localizer;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IStringLocalizer<RegisterModel> localizer)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -36,6 +39,7 @@ namespace doof.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _localizer = localizer;
         }
 
         /// <summary>
@@ -67,8 +71,12 @@ namespace doof.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [EmailAddress]
+            [Required(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.email_required),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
+            [EmailAddress(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.email_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
@@ -76,9 +84,15 @@ namespace doof.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            [DataType(DataType.Password)]
+            [Required(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_required),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
+            [StringLength(100,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_length),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
             [Display(Name = "Password")]
             public string Password { get; set; }
 
@@ -86,9 +100,13 @@ namespace doof.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [DataType(DataType.Password)]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password",
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_compare),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
             public string ConfirmPassword { get; set; }
         }
 
@@ -140,7 +158,8 @@ namespace doof.Pages.Account
                 }
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    //todo this can be done better, there might me other errors present
+                    ModelState.AddModelError(string.Empty, _localizer["invalid-register"]);
                 }
             }
 

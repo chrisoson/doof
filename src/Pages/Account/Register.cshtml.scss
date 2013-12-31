@@ -7,13 +7,9 @@
   padding-bottom: 0.5rem;
 }
 
-.login-button{
+.register-button{
   margin-top:1rem;
   margin-bottom: 1rem;
-}
-
-.link-container{
-  margin: 1rem 0;
 }
 
 .external-button-group{
@@ -24,11 +20,11 @@ h1,h3{
   font-weight: 700;
 }
 
-.login-section,.external-section{
+.register-section,.external-section{
   width: clamp(5rem, 100%, 40rem);
   margin: 0 auto;
 }
 
-.login-section{
+.register-section{
   margin-top: 5rem;
 }

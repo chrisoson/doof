@@ -1,67 +1,70 @@
 ﻿@page
 @model RegisterModel
+
 @section metatags
 {
-    <title>Register</title>
-    <meta name="description" content="Register page"/>
-    <meta name="keywords" content="Register, Register page"/>
-    <meta name="author" content="doof"/>
+  <title>@Localizer["title"]</title>
+  <meta name="description" content="@Localizer["meta-desc"]"/>
+  <meta name="keywords" content="@Localizer["meta-keywords"]"/>
+  <meta name="author" content="doof"/>
 }
-<div>
-    <div>
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl"  method="post">
-            @Html.AntiForgeryToken()
-            <h2>Create a new account.</h2>
-            <hr/>
-            <div asp-validation-summary="ModelOnly" role="alert"></div>
-            <div>
-                <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="name@example.com"/>
-                <label asp-for="Input.Email">Email</label>
-                <span asp-validation-for="Input.Email"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" autocomplete="new-password" aria-required="true" placeholder="password"/>
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" autocomplete="new-password" aria-required="true" placeholder="password"/>
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
-                <span asp-validation-for="Input.ConfirmPassword"></span>
-            </div>
-            <button id="registerSubmit" type="submit">Register</button>
-        </form>
+
+<section class="register-section">
+  <form class="register-form" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    @Html.AntiForgeryToken()
+    <h1>@Localizer["h1"]</h1>
+    <hr/>
+    <div asp-validation-summary="ModelOnly" role="alert"></div>
+    <div class="input-container">
+      <label asp-for="Input.Email">@Localizer["email-label"]</label>
+      <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="@Localizer["email-placeholder"]"/>
+      <span asp-validation-for="Input.Email"></span>
     </div>
-    <div>
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                        </div>
-                    </form>
-                }
+    <div class="input-container">
+      <label asp-for="Input.Password">@Localizer["password-label"]</label>
+      <input asp-for="Input.Password" autocomplete="new-password" aria-required="true" placeholder="@Localizer["password-placeholder"]"/>
+      <span asp-validation-for="Input.Password"></span>
+    </div>
+    <div class="input-container">
+      <label asp-for="Input.ConfirmPassword">@Localizer["confirm-password-label"]</label>
+      <input asp-for="Input.ConfirmPassword" autocomplete="new-password" aria-required="true" placeholder="@Localizer["password-placeholder"]"/>
+      <span asp-validation-for="Input.ConfirmPassword"></span>
+    </div>
+    <button class="register-button btn btn-primary" id="registerSubmit" type="submit">@Localizer["register-button"]</button>
+  </form>
+</section>
+<section class="external-section">
+  <div>
+    <h3>@Localizer["external-register"]</h3>
+    <hr/>
+    @{
+      if ((Model.ExternalLogins?.Count ?? 0) == 0)
+      {
+        <div>
+          <p>
+            There are no external authentication services configured. See this
+            <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+              article
+              about setting up this ASP.NET application to support logging in via external services
+            </a>.
+          </p>
+        </div>
+      }
+      else
+      {
+        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+          <div class="external-button-group">
+            @foreach (var provider in Model.ExternalLogins!)
+            {
+              <button type="submit" class="btn btn-secondary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
             }
-        </section>
-    </div>
-</div>
+          </div>
+        </form>
+      }
+    }
+  </div>
+</section>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+  <partial name="_ValidationScriptsPartial"/>
 }
