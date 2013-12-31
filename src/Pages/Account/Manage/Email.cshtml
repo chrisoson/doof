@@ -5,45 +5,38 @@
 }
 @section metatags
 {
-    <title>Manage Email</title>
-    <meta name="description" content="Email page"/>
-    <meta name="keywords" content="Email"/>
+    <title>@Localizer["title"]</title>
+    <meta name="description" content="@Localizer["meta-desc"]"/>
+    <meta name="keywords" content="@Localizer["meta-keywords"]"/>
     <meta name="author" content="doof"/>
 }
-
-<h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
-<div>
-    <div>
-        <form id="email-form" method="post">
-            <div asp-validation-summary="All" role="alert"></div>
-            @if (Model.IsEmailConfirmed)
-            {
-                <div>
-                    <input asp-for="Email" placeholder="Please enter your email." disabled />
-                        <div class="input-group-append">
-                            <span>✓</span>
-                        </div>
-                    <label asp-for="Email"></label>
-                </div>
-            }
-            else
-            {
-                <div class="form-floating mb-3">
-                    <input asp-for="Email" placeholder="Please enter your email." disabled />
-                    <label asp-for="Email"></label>
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail">Send verification email</button>
-                </div>
-            }
-            <div class="form-floating mb-3">
-                <input asp-for="Input.NewEmail" autocomplete="email" aria-required="true" placeholder="Please enter new email." />
-                <label asp-for="Input.NewEmail"></label>
-                <span asp-validation-for="Input.NewEmail"></span>
-            </div>
-            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail">Change email</button>
-        </form>
+<section>
+  <form id="email-form" method="post">
+    <div asp-validation-summary="All" role="alert"></div>
+    @if (Model.IsEmailConfirmed)
+    {
+      <div class="input-container">
+        <label>@Localizer["email-confirmed"] ✓</label>
+        <input asp-for="Email" placeholder="Please enter your email." disabled/>
+      </div>
+    }
+    else
+    {
+      <div class="input-container">
+        <label>Email</label>
+        <input asp-for="Email" placeholder="@Localizer["verify-placeholder"]" disabled/>
+        <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail">@Localizer["verify-email-btn"]</button>
+      </div>
+    }
+    <div class="input-container">
+      <label>@Localizer["new-email"]</label>
+      <input asp-for="Input.NewEmail" autocomplete="email" aria-required="true" placeholder="@Localizer["email-placeholder"]"/>
+      <span asp-validation-for="Input.NewEmail"></span>
     </div>
-</div>
+    <button class="btn btn-primary" id="change-email-button" type="submit" asp-page-handler="ChangeEmail">@Localizer["change-email-btn"]</button>
+  </form>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
