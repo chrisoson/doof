@@ -1,10 +1,13 @@
 ﻿@page
 @model ExternalLoginModel
-@{
-    ViewData["Title"] = "Register";
+@section metatags
+{
+    <title>External login</title>
+    <meta name="description" content="External login page"/>
+    <meta name="keywords" content="External login"/>
+    <meta name="author" content="doof"/>
 }
 
-<h1>@ViewData["Title"]</h1>
 <h2 id="external-login-title">Associate your @Model.ProviderDisplayName account.</h2>
 <hr />
 

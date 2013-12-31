@@ -1,8 +1,14 @@
 ﻿@page
 @model EmailModel
 @{
-    ViewData["Title"] = "Manage Email";
     ViewData["ActivePage"] = ManageNavPages.Email;
+}
+@section metatags
+{
+    <title>Manage Email</title>
+    <meta name="description" content="Email page"/>
+    <meta name="keywords" content="Email"/>
+    <meta name="author" content="doof"/>
 }
 
 <h3>@ViewData["Title"]</h3>

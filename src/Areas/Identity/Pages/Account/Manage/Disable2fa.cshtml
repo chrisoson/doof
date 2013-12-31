@@ -1,8 +1,14 @@
 ﻿@page
 @model Disable2faModel
 @{
-    ViewData["Title"] = "Disable two-factor authentication (2FA)";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+@section metatags
+{
+    <title>Disable 2FA</title>
+    <meta name="description" content="Disable 2FA page"/>
+    <meta name="keywords" content="Disable 2FA"/>
+    <meta name="author" content="doof"/>
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />

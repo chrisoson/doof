@@ -1,8 +1,14 @@
 ﻿@page
 @model PersonalDataModel
 @{
-    ViewData["Title"] = "Personal Data";
     ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+@section metatags
+{
+    <title>Personal data</title>
+    <meta name="description" content="Personal data page"/>
+    <meta name="keywords" content="Personal data"/>
+    <meta name="author" content="doof"/>
 }
 
 <h3>@ViewData["Title"]</h3>

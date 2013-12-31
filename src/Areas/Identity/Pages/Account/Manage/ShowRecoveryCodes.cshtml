@@ -1,8 +1,14 @@
 ﻿@page
 @model ShowRecoveryCodesModel
 @{
-    ViewData["Title"] = "Recovery codes";
     ViewData["ActivePage"] = "TwoFactorAuthentication";
+}
+@section metatags
+{
+    <title>Recovery Codes</title>
+    <meta name="description" content="Recovery Codes page"/>
+    <meta name="keywords" content="Recovery Codes"/>
+    <meta name="author" content="doof"/>
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />

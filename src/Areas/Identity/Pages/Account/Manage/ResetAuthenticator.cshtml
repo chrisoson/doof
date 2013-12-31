@@ -1,8 +1,14 @@
 ﻿@page
 @model ResetAuthenticatorModel
 @{
-    ViewData["Title"] = "Reset authenticator key";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+@section metatags
+{
+    <title>Reset Authenticator</title>
+    <meta name="description" content="Reset Authenticator page"/>
+    <meta name="keywords" content="Reset Authenticator"/>
+    <meta name="author" content="doof"/>
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />

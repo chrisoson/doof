@@ -1,8 +1,14 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
+}
+@section metatags
+{
+    <title>Profile</title>
+    <meta name="description" content="Profile page"/>
+    <meta name="keywords" content="Profile"/>
+    <meta name="author" content="doof"/>
 }
 
 <h3>@ViewData["Title"]</h3>

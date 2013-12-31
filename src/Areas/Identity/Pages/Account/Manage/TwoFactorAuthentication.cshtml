@@ -2,10 +2,15 @@
 @using Microsoft.AspNetCore.Http.Features
 @model TwoFactorAuthenticationModel
 @{
-    ViewData["Title"] = "Two-factor authentication (2FA)";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
-
+@section metatags
+{
+    <title>Two Factor Authentication</title>
+    <meta name="description" content="Two Factor Authentication page"/>
+    <meta name="keywords" content="Two Factor Authentication"/>
+    <meta name="author" content="doof"/>
+}
 <partial name="_StatusMessage" for="StatusMessage" />
 <h3>@ViewData["Title"]</h3>
 @{

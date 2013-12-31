@@ -1,8 +1,14 @@
 ﻿@page
 @model DownloadPersonalDataModel
 @{
-    ViewData["Title"] = "Download Your Data";
     ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+@section metatags
+{
+    <title>Download personal data</title>
+    <meta name="description" content="Download personal data page"/>
+    <meta name="keywords" content="Download personal data"/>
+    <meta name="author" content="doof"/>
 }
 
 <h3>@ViewData["Title"]</h3>

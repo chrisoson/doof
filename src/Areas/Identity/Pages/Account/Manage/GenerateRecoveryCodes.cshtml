@@ -1,8 +1,14 @@
 ﻿@page
 @model GenerateRecoveryCodesModel
 @{
-    ViewData["Title"] = "Generate two-factor authentication (2FA) recovery codes";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+@section metatags
+{
+    <title>Generate Recovery Codes</title>
+    <meta name="description" content="Generate Recovery Codes page"/>
+    <meta name="keywords" content="Generate Recovery Codes"/>
+    <meta name="author" content="doof"/>
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />

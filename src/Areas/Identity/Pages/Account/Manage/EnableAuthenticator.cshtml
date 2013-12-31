@@ -1,8 +1,14 @@
 ﻿@page
 @model EnableAuthenticatorModel
 @{
-    ViewData["Title"] = "Configure authenticator app";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+@section metatags
+{
+    <title>Enable authenticator</title>
+    <meta name="description" content="Enable authenticator page"/>
+    <meta name="keywords" content="Enable authenticator"/>
+    <meta name="author" content="doof"/>
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />

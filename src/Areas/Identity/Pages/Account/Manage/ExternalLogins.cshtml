@@ -1,8 +1,14 @@
 ﻿@page
 @model ExternalLoginsModel
 @{
-    ViewData["Title"] = "Manage your external logins";
     ViewData["ActivePage"] = ManageNavPages.ExternalLogins;
+}
+@section metatags
+{
+    <title>Manage external logins</title>
+    <meta name="description" content="External logins page"/>
+    <meta name="keywords" content="External logins"/>
+    <meta name="author" content="doof"/>
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />
