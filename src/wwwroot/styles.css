@@ -119,6 +119,42 @@ h2 {
   font-size: clamp(1.5rem, 2.75vw + 0.75rem, 2.5rem);
 }
 
+ol, ul {
+  padding: 0;
+  list-style-position: inside;
+}
+
+li::marker {
+  font-weight: 700;
+}
+
+.btn {
+  padding: 0.625rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  color: hsl(330, 2%, 33%);
+}
+.btn.btn-primary {
+  background-color: hsl(40, 100%, 64%);
+}
+.btn.btn-primary:hover {
+  background-color: hsl(40, 100%, 76%);
+}
+.btn.btn-secondary {
+  background-color: hsl(40, 100%, 76%);
+}
+.btn.btn-secondary:hover {
+  background-color: hsl(40, 100%, 88%);
+}
+.btn.btn-light {
+  background-color: hsl(39, 100%, 96%);
+}
+.btn.btn-dark {
+  color: hsl(39, 100%, 96%);
+}
+
 header {
   display: grid;
   padding: 1rem 0 1rem 0;

@@ -67,5 +67,14 @@ namespace doof.Resources.Pages {
                 return ResourceManager.GetString("Title", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Varför använda doof?.
+        /// </summary>
+        internal static string why_title {
+            get {
+                return ResourceManager.GetString("why-title", resourceCulture);
+            }
+        }
     }
 }

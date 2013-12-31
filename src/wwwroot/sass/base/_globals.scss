@@ -1,7 +1,5 @@
 ﻿@use "../abstracts" as a;
 
-
-
 /* makes sizing simpler */
 *,
 *::before,
@@ -32,11 +30,11 @@ body {
 
   @media(prefers-color-scheme: dark){
     color: hsl(a.$clr-white);
-    background-color: hsl(a.$clr-accent-dark);
+    background-color: hsl(a.$clr-black);
   }
 
   @media(prefers-color-scheme: light){
-    color: hsl(a.$clr-accent-dark);
+    color: hsl(a.$clr-black);
     background-color: hsl(a.$clr-white);
   }
 
@@ -93,4 +91,13 @@ h1 {
 
 h2 {
   font-size: clamp(1.5rem, 2.75vw + 0.75rem, 2.5rem);
+}
+
+ol,ul{
+  padding: 0;
+  list-style-position: inside;
+}
+
+li::marker{
+  font-weight: 700;
 }
