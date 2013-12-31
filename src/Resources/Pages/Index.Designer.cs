@@ -60,11 +60,119 @@ namespace doof.Resources.Pages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Adds &lt;/br&gt;No Annoying Popups &lt;/br&gt;Simply &lt;span class=&quot;text-decoration-underline&quot;&gt;Recipes&lt;/span&gt;.
+        /// </summary>
+        internal static string hero {
+            get {
+                return ResourceManager.GetString("hero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here.
+        /// </summary>
+        internal static string hero_button {
+            get {
+                return ResourceManager.GetString("hero-button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All recipes.
+        /// </summary>
+        internal static string hero_text {
+            get {
+                return ResourceManager.GetString("hero-text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask Terry for recipe messurements while cooking, leave your phone on the counter..
+        /// </summary>
+        internal static string terry_1 {
+            get {
+                return ResourceManager.GetString("terry-1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Need general cooking advise while cooking? Terry is not tied to only the recipe..
+        /// </summary>
+        internal static string terry_2 {
+            get {
+                return ResourceManager.GetString("terry-2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let Terry guide you through every step of the cooking process..
+        /// </summary>
+        internal static string terry_3 {
+            get {
+                return ResourceManager.GetString("terry-3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What can Terry do for you?.
+        /// </summary>
+        internal static string terry_subtitle {
+            get {
+                return ResourceManager.GetString("terry-subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meet Terry, your cooking partner.
+        /// </summary>
+        internal static string terry_title {
+            get {
+                return ResourceManager.GetString("terry-title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast website with just the information you need..
+        /// </summary>
+        internal static string why_1 {
+            get {
+                return ResourceManager.GetString("why-1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localized for different languages..
+        /// </summary>
+        internal static string why_2 {
+            get {
+                return ResourceManager.GetString("why-2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Build in voice cooking assistant to help you while cooking.
+        /// </summary>
+        internal static string why_3 {
+            get {
+                return ResourceManager.GetString("why-3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why choose doof?.
+        /// </summary>
+        internal static string why_title {
+            get {
+                return ResourceManager.GetString("why-title", resourceCulture);
             }
         }
     }

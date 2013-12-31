@@ -60,7 +60,7 @@ namespace doof.Resources.Pages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maison.
+        ///   Looks up a localized string similar to Accueil.
         /// </summary>
         internal static string Title {
             get {

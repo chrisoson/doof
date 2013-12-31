@@ -27,6 +27,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     options.SetDefaultCulture(defaultCulture);
     options.AddSupportedUICultures(supportedCultures);
+    options.AddSupportedCultures(supportedCultures);
     options.FallBackToParentUICultures = true;
 });
 

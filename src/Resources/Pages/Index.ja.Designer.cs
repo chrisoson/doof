@@ -60,7 +60,7 @@ namespace doof.Resources.Pages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to iea.
+        ///   Looks up a localized string similar to ホーム.
         /// </summary>
         internal static string Title {
             get {
