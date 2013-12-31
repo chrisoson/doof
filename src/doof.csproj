@@ -116,6 +116,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>IndexModel.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\Email.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Email.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\_ManageNav.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_ManageNav.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -233,6 +241,16 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>IndexModel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\Email.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Email.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\_ManageNav.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_ManageNav.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 
