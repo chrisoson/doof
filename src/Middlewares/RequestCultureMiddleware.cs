@@ -15,54 +15,46 @@ public class RequestCultureMiddleware
 
     public async Task Invoke(HttpContext context)
     {
-         var path = context.Request.Path.Value;
-            var isExternalAuthRequest = path.StartsWith("/signin-", StringComparison.OrdinalIgnoreCase) ||
-                                        path.StartsWith("/ExternalLogin", StringComparison.OrdinalIgnoreCase);
+        var path = context.Request.Path.Value;
 
-            // Skip culture prefix logic for external authentication requests
-            if (isExternalAuthRequest)
+        if (context.Request.Method == HttpMethod.Post.Method)
+        {
+            // If it's a POST request, remove the culture prefix and continue
+            var pathSegments = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            if (pathSegments.Length > 1 && _supportedCultures.Contains(pathSegments[0]))
             {
-                await _next(context);
-                return;
-            }
-
-            if (context.Request.Method == HttpMethod.Post.Method)
-            {
-                // If it's a POST request, remove the culture prefix and continue
-                var pathSegments = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
-                if (pathSegments.Length > 1 && _supportedCultures.Contains(pathSegments[0]))
-                {
-                    // Remove the culture prefix
-                    context.Request.Path = new PathString("/" + string.Join('/', pathSegments.Skip(1)));
-                }
-                await _next(context);
-                return;
-            }
-
-            // Handle GET requests as usual
-            var culturePrefix = path.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
-
-            if (string.IsNullOrEmpty(culturePrefix) || !_supportedCultures.Contains(culturePrefix))
-            {
-                var acceptLanguageHeader = context.Request.Headers["Accept-Language"].ToString();
-                var preferredCultures = acceptLanguageHeader.Split(',')
-                    .Select(StringWithQualityHeaderValue.Parse)
-                    .OrderByDescending(s => s.Quality.GetValueOrDefault(1))
-                    .Select(s => s.Value)
-                    .ToList();
-
-                var userCulture = preferredCultures.FirstOrDefault(c => _supportedCultures.Contains(c)) ?? "en-US";
-
-                if (!context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
-                {
-                    var redirectPath = $"/{userCulture}{context.Request.Path.Value}";
-                    var queryString = context.Request.QueryString.Value;
-                    context.Response.Redirect(redirectPath + queryString);
-                    return;
-                }
+                // Remove the culture prefix
+                context.Request.Path = new PathString("/" + string.Join('/', pathSegments.Skip(1)));
             }
 
             await _next(context);
+            return;
+        }
+
+        // Handle GET requests as usual
+        var culturePrefix = path.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+
+        if (string.IsNullOrEmpty(culturePrefix) || !_supportedCultures.Contains(culturePrefix))
+        {
+            var acceptLanguageHeader = context.Request.Headers["Accept-Language"].ToString();
+            var preferredCultures = acceptLanguageHeader.Split(',')
+                .Select(StringWithQualityHeaderValue.Parse)
+                .OrderByDescending(s => s.Quality.GetValueOrDefault(1))
+                .Select(s => s.Value)
+                .ToList();
+
+            var userCulture = preferredCultures.FirstOrDefault(c => _supportedCultures.Contains(c)) ?? "en-US";
+
+            if (!context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
+            {
+                var redirectPath = $"/{userCulture}{context.Request.Path.Value}";
+                var queryString = context.Request.QueryString.Value;
+                context.Response.Redirect(redirectPath + queryString);
+                return;
+            }
+        }
+
+        await _next(context);
     }
 }
 

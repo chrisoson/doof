@@ -1,0 +1,32 @@
+/* colors */
+/* font-sizes */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.register-button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.external-button-group {
+  margin-top: 1rem;
+}
+
+h1, h3 {
+  font-weight: 700;
+}
+
+.register-section, .external-section {
+  width: clamp(5rem, 100%, 40rem);
+  margin: 0 auto;
+}
+
+.register-section {
+  margin-top: 5rem;
+}
+
+/*# sourceMappingURL=Register.cshtml.css.map */

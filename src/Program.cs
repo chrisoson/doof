@@ -47,8 +47,6 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider { Options = options});
 });
 
-var configuration = builder.Configuration;
-
 builder.Services.AddAuthentication()
     .AddGoogle(googleOptions =>
     {
@@ -59,8 +57,8 @@ builder.Services.AddAuthentication()
         }
         else
         {
-            googleOptions.ClientId = configuration["GOOGLE_CLIENT_ID"]!;
-            googleOptions.ClientSecret = configuration["GOOGLE_CLIENT_SECRET"]!;
+            googleOptions.ClientId = builder.Configuration["GOOGLE_CLIENT_ID"]!;
+            googleOptions.ClientSecret = builder.Configuration["GOOGLE_CLIENT_SECRET"]!;
         }
     })
     //This is not working right now, set this up when the website is live.
@@ -73,8 +71,8 @@ builder.Services.AddAuthentication()
         }
         else
         {
-            facebookOptions.AppId = configuration["FACEBOOK_APP_ID"]!;
-            facebookOptions.AppSecret = configuration["FACEBOOK_APP_SECRET"]!;
+            facebookOptions.AppId = builder.Configuration["FACEBOOK_APP_ID"]!;
+            facebookOptions.AppSecret = builder.Configuration["FACEBOOK_APP_SECRET"]!;
         }
     })
     .AddMicrosoftAccount(microsoftOptions =>
@@ -86,12 +84,10 @@ builder.Services.AddAuthentication()
         }
         else
         {
-            microsoftOptions.ClientId = configuration["MICROSOFT_CLIENT_ID"]!;
-            microsoftOptions.ClientSecret = configuration["MICROSOFT_CLIENT_SECRET"]!;
+            microsoftOptions.ClientId = builder.Configuration["MICROSOFT_CLIENT_ID"]!;
+            microsoftOptions.ClientSecret = builder.Configuration["MICROSOFT_CLIENT_SECRET"]!;
         }
     });
-
-
 
 var app = builder.Build();
 
@@ -111,6 +107,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
+app.UseRequestCulture(app.Configuration);
+
 app.UseRouting();
 
 app.UseRequestLocalization();
@@ -118,8 +116,6 @@ app.UseRequestLocalization();
 app.UseAuthorization();
 
 app.UseStatusCodePagesWithRedirects("/not-found");
-
-app.UseRequestCulture(app.Configuration);
 
 app.MapRazorPages();
 
