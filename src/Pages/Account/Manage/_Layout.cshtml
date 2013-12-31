@@ -13,20 +13,18 @@
 @RenderSection("metatags", required: false)
 }
 
-<h1>Manage your account</h1>
-
-<div>
-    <h2>Change your account settings</h2>
-    <hr />
-    <div class="row">
-        <div class="col-md-3">
-            <partial name="_ManageNav" />
-        </div>
-        <div class="col-md-9">
-            @RenderBody()
-        </div>
+<section>
+  <h1>@Localizer["h1"]</h1>
+  <hr/>
+  <div class="manage-container">
+    <div>
+      <partial name="_ManageNav"/>
     </div>
-</div>
+    <div class="render-body">
+      @RenderBody()
+    </div>
+  </div>
+</section>
 
 @section Scripts {
     @RenderSection("Scripts", required: false)

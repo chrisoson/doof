@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Localization;
 
 namespace doof.Pages.Account.Manage
 {
@@ -13,13 +14,16 @@ namespace doof.Pages.Account.Manage
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IStringLocalizer<IndexModel> _localizer;
 
         public IndexModel(
             UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager,
+            IStringLocalizer<IndexModel> localizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _localizer = localizer;
         }
 
         /// <summary>
@@ -52,7 +56,9 @@ namespace doof.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Phone]
+            [Phone(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.IndexModel.phone_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.IndexModel))]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
         }

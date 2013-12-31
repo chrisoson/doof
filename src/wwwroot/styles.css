@@ -138,6 +138,14 @@ li::marker {
   list-style: none;
 }
 
+.manage-nav {
+  list-style: none;
+  text-align: center;
+}
+.manage-nav__link.active {
+  color: white;
+}
+
 .btn {
   padding: 0.5rem 0.625rem;
   border-radius: 0.25rem;

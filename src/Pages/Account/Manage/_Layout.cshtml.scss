@@ -1,0 +1,19 @@
+﻿@use "../../../wwwroot/sass/abstracts" as a;
+
+
+.manage-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+
+  @include a.tablet {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.render-body{
+  @include a.tablet {
+    width: 75%;
+    margin: 0 auto;
+  }
+}

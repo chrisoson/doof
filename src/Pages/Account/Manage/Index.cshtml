@@ -2,28 +2,28 @@
 @model IndexModel
 @section metatags
 {
-    <title>Profile</title>
-    <meta name="description" content="Profile page"/>
-    <meta name="keywords" content="Profile"/>
+    <title>@Localizer["title"]</title>
+    <meta name="description" content="@Localizer["meta-desc"]"/>
+    <meta name="keywords" content="@Localizer["meta-keywords"]"/>
     <meta name="author" content="doof"/>
 }
 
-<h3>@ViewData["Title"]</h3>
+<h3>@Localizer["title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
-<div class="row">
-    <div class="col-md-6">
+<div>
+    <div>
         <form id="profile-form" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
-                <label asp-for="Username" class="form-label"></label>
+            <div class="input-container">
+              <label asp-for="Username" class="form-label">@Localizer["username-label"]</label>
+              <input asp-for="Username" class="form-control" placeholder="@Localizer["username-placeholder"]" disabled/>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number."/>
-                <label asp-for="Input.PhoneNumber" class="form-label"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            <div class="input-container">
+              <label asp-for="Input.PhoneNumber" class="form-label">@Localizer["phone-label"]</label>
+              <input asp-for="Input.PhoneNumber" class="form-control" placeholder="@Localizer["phone-placeholder"]"/>
+              <span asp-validation-for="Input.PhoneNumber" class="field-validation-error"></span>
             </div>
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            <button id="update-profile-button" type="submit" class="btn btn-primary">@Localizer["save-button"]</button>
         </form>
     </div>
 </div>

@@ -108,3 +108,17 @@ li::marker{
     list-style: none;
   }
 }
+
+//todo maybe put this another place
+.manage-nav{
+  list-style: none;
+  text-align: center;
+
+  &__link{
+
+
+    &.active {
+      color: white;
+    }
+  }
+}
