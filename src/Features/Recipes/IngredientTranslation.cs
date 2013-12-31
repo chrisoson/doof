@@ -5,9 +5,12 @@ namespace doof.Features.Recipes;
 public class IngredientTranslation
 {
     public int Id { get; set; }
+
     public int IngredientId { get; set; }
-    public Ingredient Ingredient { get; set; }
+    public Ingredient Ingredient { get; set; } = null!;
+
     public required string Language { get; set; }
+
     public required string IngredientName { get; set; }
 
     public static void Configure(ModelBuilder builder)

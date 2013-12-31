@@ -5,11 +5,16 @@ namespace doof.Features.Recipes;
 public class RecipeTranslation
 {
     public int Id { get; set; }
+
     public int RecipeId { get; set; }
-    public Recipe Recipe { get; set; }
+    public Recipe Recipe { get; set; } = null!;
+
     public required string Language { get; set; }
+
     public required string RecipeTitle { get; set; }
+
     public string? RecipeSubTitle { get; set; }
+
     public ICollection<RecipeStep> Steps { get; set; } = [];
 
     public static void Configure(ModelBuilder builder)

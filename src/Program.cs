@@ -42,8 +42,12 @@ var defaultCulture = builder.Configuration.GetValue<string>("Localization:Defaul
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     options.DefaultRequestCulture = new RequestCulture(defaultCulture!);
-    options.AddSupportedCultures(supportedCultures);
-    options.AddSupportedUICultures(supportedCultures);
+    if (supportedCultures != null)
+    {
+        options.AddSupportedCultures(supportedCultures);
+        options.AddSupportedUICultures(supportedCultures);
+    }
+
     options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider { Options = options});
 });
 

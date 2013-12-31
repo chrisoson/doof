@@ -6,7 +6,7 @@ public class Tag
 {
     public int Id { get; set; }
 
-    public ICollection<TagTranslation> Translations { get; set; }
+    public ICollection<TagTranslation> Translations { get; set; } = [];
 
     public static void Configure(ModelBuilder builder)
     {

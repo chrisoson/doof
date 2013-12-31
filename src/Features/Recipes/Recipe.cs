@@ -8,9 +8,9 @@ public class Recipe
     public int Id { get; set; }
 
     public required string AuthorId { get; set; }
-    public CustomUser CustomUser { get; set; }
+    public CustomUser CustomUser { get; set; } = null!;
 
-    public ICollection<RecipeImage> Images { get; set; }
+    public required ICollection<RecipeImage> Images { get; set; } = [];
 
     public ICollection<RecipeTranslation> Translations { get; set; } = [];
 
