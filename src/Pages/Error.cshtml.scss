@@ -1,0 +1,6 @@
+﻿@use "../wwwroot/sass/variables" as v;
+
+h1{
+  color: v.$background;
+  background: aqua;
+}

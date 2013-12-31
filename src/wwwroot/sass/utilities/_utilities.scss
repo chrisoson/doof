@@ -1,0 +1,53 @@
+﻿@use "../abstracts" as a;
+
+/*-------- Utility classes --------*/
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container{
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+/* colors */
+.bg-main-dark { background-color: hsl(a.$clr-main-dark);}
+.bg-main-light { background-color: hsl(a.$clr-main-light);}
+
+.bg-accent-dark { background-color: hsl(a.$clr-accent-dark);}
+.bg-accent-light { background-color: hsl(a.$clr-accent-light);}
+.bg-white { background-color: hsl(a.$clr-white);}
+
+.text-main-dark { color: hsl(a.$clr-main-dark);}
+.text-main-light { color: hsl(a.$clr-main-light);}
+
+.text-accent-dark { color: hsl(a.$clr-accent-dark);}
+.text-accent-light { color: hsl(a.$clr-accent-light);}
+
+.text-white { color: hsl(a.$clr-white);}
+
+/* typography */
+
+.fs-200 { font-size: a.$fs-200;}
+.fs-300 { font-size: a.$fs-300;}
+.fs-400 { font-size: a.$fs-400;}
+.fs-500 { font-size: a.$fs-500;}
+.fs-600 { font-size: a.$fs-600;}
+.fs-700 { font-size: a.$fs-700;}
+.fs-800 { font-size: a.$fs-800;}
+.fs-900 { font-size: a.$fs-900;}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}

@@ -1,0 +1,11 @@
+﻿header{
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: 1fr 1fr;
+
+  & nav > ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
