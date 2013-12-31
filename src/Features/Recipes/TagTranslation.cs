@@ -9,6 +9,7 @@ public class TagTranslation
     public Tag Tag { get; set; }
     public required string Language { get; set; }
     public required string TagName { get; set; }
+    public required string UTF8Value { get; set; }
 
     public static void Configure(ModelBuilder builder)
     {
@@ -17,6 +18,7 @@ public class TagTranslation
             e.HasKey(tt => tt.Id);
             e.Property(tt => tt.Language).IsRequired().HasMaxLength(10);
             e.Property(tt => tt.TagName).IsRequired().HasMaxLength(50);
+            e.Property(tt => tt.UTF8Value).IsRequired().HasMaxLength(9);
             e.HasOne(tt => tt.Tag)
                 .WithMany(i => i.Translations)
                 .HasForeignKey(it => it.TagId);
