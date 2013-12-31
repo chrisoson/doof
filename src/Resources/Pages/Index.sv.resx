@@ -21,4 +21,8 @@
     <data name="Title" xml:space="preserve">
         <value>Hem</value>
     </data>
+    <data name="why-title" xml:space="preserve">
+        <value>why-title</value>
+        <comment>why-title</comment>
+    </data>
 </root>
