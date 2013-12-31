@@ -12,6 +12,7 @@
 }
 <partial name="_StatusMessage" for="StatusMessage" />
 <section>
+  <h1>@Localizer["title"]</h1>
   <form id="email-form" method="post">
     <div asp-validation-summary="All" role="alert"></div>
     @if (Model.IsEmailConfirmed)

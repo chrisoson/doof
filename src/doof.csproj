@@ -124,6 +124,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>_ManageNav.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\SetPassword.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SetPassword.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Account\Manage\SetPasswordModel.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SetPasswordModel.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -251,6 +259,16 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>_ManageNav.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\SetPassword.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SetPassword.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Account\Manage\SetPasswordModel.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SetPasswordModel.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

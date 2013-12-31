@@ -46,19 +46,27 @@ namespace doof.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            [DataType(DataType.Password)]
-            [Display(Name = "New password")]
+            [Required(
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.SetPasswordModel.password_required),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.SetPasswordModel))]
+            [StringLength(100,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.SetPasswordModel.password_length),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.SetPasswordModel))]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.SetPasswordModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.SetPasswordModel))]
             public string NewPassword { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [DataType(DataType.Password)]
-            [Display(Name = "Confirm new password")]
-            [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+            [DataType(DataType.Password,
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.SetPasswordModel.password_valid),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.SetPasswordModel))]
+            [Compare("NewPassword",
+                ErrorMessageResourceName = nameof(Resources.Pages.Account.Manage.SetPasswordModel.password_compare),
+                ErrorMessageResourceType = typeof(Resources.Pages.Account.Manage.SetPasswordModel))]
             public string ConfirmPassword { get; set; }
         }
 

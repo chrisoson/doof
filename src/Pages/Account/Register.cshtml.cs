@@ -93,7 +93,6 @@ namespace doof.Pages.Account
             [DataType(DataType.Password,
                 ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_valid),
                 ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
-            [Display(Name = "Password")]
             public string Password { get; set; }
 
             /// <summary>
@@ -103,7 +102,6 @@ namespace doof.Pages.Account
             [DataType(DataType.Password,
                 ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_valid),
                 ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
-            [Display(Name = "Confirm password")]
             [Compare("Password",
                 ErrorMessageResourceName = nameof(Resources.Pages.Account.RegisterModel.password_compare),
                 ErrorMessageResourceType = typeof(Resources.Pages.Account.RegisterModel))]
