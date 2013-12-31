@@ -24,10 +24,6 @@ html {
 
 /* min body height */
 body {
-
-  //todo change this
-  font-family: "Roboto", sans-serif;
-
   @media(prefers-color-scheme: dark){
     color: hsl(a.$clr-white);
     background-color: hsl(a.$clr-black);

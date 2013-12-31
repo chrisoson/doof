@@ -1,6 +1,10 @@
-﻿section{
+﻿@use "../wwwroot/sass/abstracts" as a;
+
+section{
   margin-top: 10rem;
   margin-bottom:10rem;
+  display: grid;
+  place-items: center;
 }
 
 .hero-section{
@@ -22,6 +26,11 @@
     gap: 1rem;
     padding-top: 1rem;
   }
+
+  button {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 h2{
@@ -40,4 +49,11 @@ ol,ul {
     padding-top: 1rem;
     font-weight: 700;
   }
+
+  > div {
+    @include a.tablet {
+      width: 50%;
+    }
+  }
+
 }

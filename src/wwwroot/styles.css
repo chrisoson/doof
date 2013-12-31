@@ -51,7 +51,6 @@ html {
 
 /* min body height */
 body {
-  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   min-height: 100svh;
   width: clamp(16rem, 90vw, 80rem);

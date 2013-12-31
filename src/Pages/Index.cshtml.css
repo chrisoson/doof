@@ -1,6 +1,10 @@
+/* colors */
+/* font-sizes */
 section {
   margin-top: 10rem;
   margin-bottom: 10rem;
+  display: grid;
+  place-items: center;
 }
 
 .hero-section {
@@ -21,6 +25,10 @@ section {
   gap: 1rem;
   padding-top: 1rem;
 }
+.hero-section button {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 
 h2 {
   font-weight: 700;
@@ -35,6 +43,11 @@ ol, ul {
 .terry h4 {
   padding-top: 1rem;
   font-weight: 700;
+}
+@media (min-width: 768px) {
+  .terry > div {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=Index.cshtml.css.map */
