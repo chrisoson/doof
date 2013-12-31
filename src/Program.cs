@@ -1,14 +1,17 @@
+using System.Globalization;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using doof.Data;
 using doof.Helpers;
-using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Localization.Routing;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-var supportedCultures = new[] { "en-US", "fr-FR", "es-ES", "sv-SE", "ja-JP" };
-var defaultCulture = "en-US";
+var supportedAppLanguages = builder.Configuration.GetSection("SupportedAppLanguages").Get<SupportedAppLanguages>();
+var supportedCultures = supportedAppLanguages.Dict.Values.Select(langInApp => langInApp.Culture).ToArray();
 
 //If it is in production, i will read env variables in the docker container
 //provided by a .env file and passed in the docker-compose.yml file.
@@ -22,26 +25,29 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    options.SetDefaultCulture(defaultCulture);
-    options.AddSupportedCultures(supportedCultures);
-    options.AddSupportedUICultures(supportedCultures);
-});
-
 builder.Services
     .AddRazorPages()
-    .AddRazorPagesOptions(options =>
+    .AddRazorPagesOptions(o =>
     {
-        options.Conventions.Add(new CustomCultureRouteModelConvention());
+        o.Conventions.Add(new CustomCultureRouteRouteModelConvention());
     })
-    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+    .AddViewLocalization()
     .AddDataAnnotationsLocalization();
 
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+    options.AddSupportedCultures(supportedCultures);
+    options.AddSupportedUICultures(supportedCultures);
+    options.RequestCultureProviders.Insert(0, new RouteDataRequestCultureProvider { Options = options});
+});
+
+builder.Services.Configure<SupportedAppLanguages>(builder.Configuration.GetSection("AppLanguages"));
 
 var configuration = builder.Configuration;
-//todo set up all the url of these providers when the site is live.
+
 builder.Services.AddAuthentication()
     .AddGoogle(googleOptions =>
     {
@@ -103,12 +109,11 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-//used to redirect the user to the correct culture if the user has not set the culture in the url.
 app.Use(async (context, next) =>
 {
     var culturePrefix = context.Request.Path.Value.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
 
-    if (!supportedCultures.Contains(culturePrefix))
+    if (string.IsNullOrEmpty(culturePrefix) || !supportedCultures.Contains(culturePrefix))
     {
         var acceptLanguageHeader = context.Request.Headers["Accept-Language"].ToString();
         var preferredCultures = acceptLanguageHeader.Split(',')
@@ -117,23 +122,26 @@ app.Use(async (context, next) =>
             .Select(s => s.Value)
             .ToList();
 
-        var userCulture = preferredCultures.FirstOrDefault(c => supportedCultures.Contains(c)) ?? defaultCulture;
+        var userCulture = preferredCultures.FirstOrDefault(c => supportedCultures.Contains(c)) ?? "en-US";
 
         if (!context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
         {
             var redirectPath = $"/{userCulture}{context.Request.Path.Value}";
-            context.Response.Redirect(redirectPath);
+            var queryString = context.Request.QueryString.Value;
+            context.Response.Redirect(redirectPath + queryString);
             return;
         }
     }
 
     await next();
 });
-app.UseRequestLocalization();
 
 app.UseRouting();
 
+app.UseRequestLocalization();
+
 app.UseAuthorization();
+
 
 app.MapRazorPages();
 

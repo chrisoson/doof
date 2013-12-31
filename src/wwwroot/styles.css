@@ -155,6 +155,10 @@ header{
     display: flex;
     justify-content: space-between;
     list-style: none;
-
   }
+}
+
+.my-class{
+  padding: 2px;
+  width: 100px;
 }

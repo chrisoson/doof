@@ -2,14 +2,24 @@
 
 namespace doof.Helpers;
 
-public class CustomCultureRouteModelConvention : IPageRouteModelConvention
+public class CustomCultureRouteRouteModelConvention : IPageRouteModelConvention
 {
     public void Apply(PageRouteModel model)
     {
-        foreach (var selector in model.Selectors)
+        var selectorCount = model.Selectors.Count;
+
+        for (var i = 0; i < selectorCount; i++)
         {
-            var template = selector.AttributeRouteModel.Template;
-            selector.AttributeRouteModel.Template = "{culture=en-us}/" + template;
+            var selector = model.Selectors[i];
+
+            model.Selectors.Add(new SelectorModel
+            {
+                AttributeRouteModel = new AttributeRouteModel
+                {
+                    Order = -1,
+                    Template = AttributeRouteModel.CombineTemplates("{culture?}", selector.AttributeRouteModel.Template),
+                }
+            });
         }
     }
 }
