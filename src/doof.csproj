@@ -23,4 +23,55 @@
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Pages\Index.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Index.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Index.es.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Index.sv.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.sv.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Index.ja.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.ja.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Pages\Index.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Index.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.fr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Index.es.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.es.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Index.sv.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.sv.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Index.ja.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.ja.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

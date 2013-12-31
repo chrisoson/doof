@@ -1,8 +1,14 @@
+using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using doof.Data;
+using doof.Helpers;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var supportedCultures = new[] { "en-US", "fr-FR", "es-ES", "sv-SE", "ja-JP" };
+var defaultCulture = "en-US";
 
 //If it is in production, i will read env variables in the docker container
 //provided by a .env file and passed in the docker-compose.yml file.
@@ -15,11 +21,26 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddRazorPages();
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.SetDefaultCulture(defaultCulture);
+    options.AddSupportedUICultures(supportedCultures);
+    options.FallBackToParentUICultures = true;
+});
+
+builder.Services
+    .AddRazorPages()
+    .AddRazorPagesOptions(options =>
+    {
+        options.Conventions.Add(new CustomCultureRouteModelConvention());
+    })
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization();
+
 
 var configuration = builder.Configuration;
-
-
 //todo set up all the url of these providers when the site is live.
 builder.Services.AddAuthentication()
     .AddGoogle(googleOptions =>
@@ -63,6 +84,8 @@ builder.Services.AddAuthentication()
         }
     });
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -79,6 +102,34 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+//used to redirect the user to the correct culture if the user has not set the culture in the url.
+app.Use(async (context, next) =>
+{
+    var culturePrefix = context.Request.Path.Value.Split('/', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+
+    if (!supportedCultures.Contains(culturePrefix))
+    {
+        var acceptLanguageHeader = context.Request.Headers["Accept-Language"].ToString();
+        var preferredCultures = acceptLanguageHeader.Split(',')
+            .Select(StringWithQualityHeaderValue.Parse)
+            .OrderByDescending(s => s.Quality.GetValueOrDefault(1))
+            .Select(s => s.Value)
+            .ToList();
+
+        var userCulture = preferredCultures.FirstOrDefault(c => supportedCultures.Contains(c)) ?? defaultCulture;
+
+        if (!context.Request.Path.Value.StartsWith($"/{userCulture}", StringComparison.OrdinalIgnoreCase))
+        {
+            var redirectPath = $"/{userCulture}{context.Request.Path.Value}";
+            context.Response.Redirect(redirectPath);
+            return;
+        }
+    }
+
+    await next();
+});
+app.UseRequestLocalization();
 
 app.UseRouting();
 

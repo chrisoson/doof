@@ -8,6 +8,10 @@
         Layout = "/Areas/Identity/Pages/Account/Manage/_Layout.cshtml";
     }
 }
+@if (IsSectionDefined("metatags"))
+{
+@RenderSection("metatags", required: false)
+}
 
 <h1>Manage your account</h1>
 
