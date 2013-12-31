@@ -44,6 +44,82 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Index.ja.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes\Index.es.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes\Index.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes\Index.ja.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.ja.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes\Index.sv.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.sv.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Recipes.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes.es.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Recipes.es.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Recipes.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes.ja.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Recipes.ja.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Recipes.sv.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Recipes.sv.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Shared\_Layout.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Shared\_Layout.es.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Layout.es.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Shared\_Layout.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Layout.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Shared\_Layout.ja.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Layout.ja.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Shared\_Layout.sv.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Layout.sv.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_LoginPartial.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.es.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_LoginPartial.es.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_LoginPartial.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.ja.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_LoginPartial.ja.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Pages\Shared\_LoginPartial.sv.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_LoginPartial.sv.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -71,6 +147,101 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Index.ja.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes\Index.es.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.es.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes\Index.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.fr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes\Index.ja.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.ja.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes\Index.sv.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.sv.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Recipes.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes.es.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Recipes.es.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Recipes.fr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes.ja.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Recipes.ja.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Recipes.sv.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Recipes.sv.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Shared\_Layout.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Shared\_Layout.es.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.es.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Shared\_Layout.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.fr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Shared\_Layout.ja.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.ja.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Shared\_Layout.sv.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.sv.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Shared\_LoginPartial.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_LoginPartial.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Shared\_LoginPartial.es.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_LoginPartial.es.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Shared\_LoginPartial.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_LoginPartial.fr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Shared\_LoginPartial.ja.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_LoginPartial.ja.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Pages\Shared\_LoginPartial.sv.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_LoginPartial.sv.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 
