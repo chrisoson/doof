@@ -141,6 +141,7 @@ app.UseRouting();
 app.UseRequestLocalization();
 
 app.UseAuthorization();
+app.UseStatusCodePagesWithRedirects("/error/{0}");
 
 
 app.MapRazorPages();
