@@ -6,5 +6,6 @@ public class Recipes : PageModel
 {
     public void OnGet()
     {
+
     }
 }

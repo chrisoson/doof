@@ -66,18 +66,18 @@
     {
       <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
         <div class="external-button-group">
-          @foreach (var provider in Model.ExternalLogins!)
-          {
-            <button
-              type="submit"
-              class="external-button btn btn-secondary"
-              name="provider"
-              value="@provider.Name"
-              title="Log in using your @provider.DisplayName account">
-              @(provider.DisplayName)
-              <img src="~/svg/@(provider.DisplayName).svg" width="30px" height="30px" alt="Image of the @(provider.DisplayName) icon"/>
-            </button>
-          }
+        @foreach (var provider in Model.ExternalLogins!)
+        {
+          <button
+            type="submit"
+            class="external-button btn btn-secondary"
+            name="provider"
+            value="@provider.Name"
+            title="Log in using your @provider.DisplayName account">
+            @(provider.DisplayName)
+            <img src="~/svg/@(provider.DisplayName).svg" width="30px" height="30px" alt="Image of the @(provider.DisplayName) icon"/>
+          </button>
+        }
         </div>
       </form>
     }
