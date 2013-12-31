@@ -2,9 +2,14 @@
 
 :root {
   /* colors */
-  --clr-dark: 230 35% 7%;
-  --clr-light: 231 77% 90%;
-  --clr-white: 0 0% 100%;
+  --clr-main-dark: 40 100% 64%;
+  --clr-main-light: 40 100% 76%;
+
+  --clr-accent-dark: 330 2% 33%;
+  --clr-accent-light: 40 100% 88%;
+  --clr-accent-comp: 216 100% 57%;
+
+  --clr-white: 39 100% 96%;
 
   /* font-sizes */
   --fs-200: 0.875rem;
@@ -46,11 +51,11 @@ body {
 
   @media(prefers-color-scheme: dark){
     color: hsl(var(--clr-white));
-    background-color: hsl(var(--clr-dark));
+    background-color: hsl(var(--clr-accent-dark));
   }
 
   @media(prefers-color-scheme: light){
-    color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-accent-dark));
     background-color: hsl(var(--clr-white));
   }
 
@@ -105,12 +110,19 @@ li {
 }
 
 /* colors */
-.bg-dark { background-color: hsl( var(--clr-dark));}
-.bg-light { background-color: hsl( var(--clr-light));}
+.bg-main-dark { background-color: hsl( var(--clr-main-dark));}
+.bg-main-light { background-color: hsl( var(--clr-main-light));}
+
+.bg-accent-dark { background-color: hsl( var(--clr-accent-dark));}
+.bg-accent-light { background-color: hsl( var(--clr-accent-light));}
 .bg-white { background-color: hsl( var(--clr-white));}
 
-.text-dark { color: hsl( var(--clr-dark));}
-.text-light { color: hsl( var(--clr-light));}
+.text-main-dark { color: hsl( var(--clr-main-dark));}
+.text-main-light { color: hsl( var(--clr-main-light));}
+
+.text-accent-dark { color: hsl( var(--clr-accent-dark));}
+.text-accent-light { color: hsl( var(--clr-accent-light));}
+
 .text-white { color: hsl( var(--clr-white));}
 
 /* typography */

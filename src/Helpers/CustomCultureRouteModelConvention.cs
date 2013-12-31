@@ -6,19 +6,10 @@ public class CustomCultureRouteModelConvention : IPageRouteModelConvention
 {
     public void Apply(PageRouteModel model)
     {
-        List<SelectorModel> selectorModels = new List<SelectorModel>();
-        foreach (var selector in model.Selectors.ToList())
+        foreach (var selector in model.Selectors)
         {
             var template = selector.AttributeRouteModel.Template;
-            selectorModels.Add(new SelectorModel(){
-                AttributeRouteModel = new AttributeRouteModel
-                {
-                    Template = "/{culture}" + "/" + template
-                }
-            });
-        }
-        foreach(var m in selectorModels){
-            model.Selectors.Add(m);
+            selector.AttributeRouteModel.Template = "{culture=en-us}/" + template;
         }
     }
 }

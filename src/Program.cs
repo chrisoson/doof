@@ -26,9 +26,8 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     options.SetDefaultCulture(defaultCulture);
-    options.AddSupportedUICultures(supportedCultures);
     options.AddSupportedCultures(supportedCultures);
-    options.FallBackToParentUICultures = true;
+    options.AddSupportedUICultures(supportedCultures);
 });
 
 builder.Services
